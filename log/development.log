@@ -2513,3 +2513,340 @@ FOREIGN KEY ("article_id")
   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."article_id" = ? LIMIT ?[0m  [["article_id", 1], ["LIMIT", 11]]
   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (2.0ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "Joe Burke"], ["body", "Wow! I love this article!"], ["article_id", 1], ["created_at", "2020-08-28 15:13:10.217978"], ["updated_at", "2020-08-28 15:13:10.217978"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."article_id" = ? LIMIT ?[0m  [["article_id", 1], ["LIMIT", 11]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "Maryjane"], ["body", "I agree! What an excellent article"], ["article_id", 1], ["created_at", "2020-08-28 15:14:46.786329"], ["updated_at", "2020-08-28 15:14:46.786329"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."article_id" = ? LIMIT ?[0m  [["article_id", 1], ["LIMIT", 11]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "Mark Rode"], ["body", "Wonderful article! So inspiring!"], ["article_id", 1], ["created_at", "2020-08-28 15:15:46.729871"], ["updated_at", "2020-08-28 15:15:46.729871"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."article_id" = ? LIMIT ?[0m  [["article_id", 1], ["LIMIT", 11]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."article_id" = ? LIMIT ?[0m  [["article_id", 1], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-08-28 16:22:26 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/joe/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 75ms (Views: 58.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/2" for ::1 at 2020-08-28 16:22:29 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:7
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered articles/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for ::1 at 2020-08-28 16:24:06 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/1" for ::1 at 2020-08-28 16:24:07 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:7
+  Rendered collection of articles/_comment.html.erb [3 times] (1.1ms)
+  Rendered articles/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "Amita Roy"], ["body", "Now this is my favourite article!"], ["article_id", 2], ["created_at", "2020-08-28 15:25:40.181615"], ["updated_at", "2020-08-28 15:25:40.181615"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/articles" for ::1 at 2020-08-28 16:25:55 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/2" for ::1 at 2020-08-28 16:25:56 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:7
+  Rendered collection of articles/_comment.html.erb [1 times] (0.9ms)
+  Rendered articles/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/2" for ::1 at 2020-08-28 16:29:00 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (0.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:8
+  Rendered collection of articles/_comment.html.erb [1 times] (0.3ms)
+  Rendered articles/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/2" for ::1 at 2020-08-28 16:33:34 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (0.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:8
+  Rendered collection of articles/_comment.html.erb [1 times] (0.3ms)
+  Rendered articles/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 51ms (Views: 21.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/articles/2" for ::1 at 2020-08-28 16:37:51 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered articles/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/joe/Coding/Microverse/Ruby on Rails/Blog App/Blog-App/app/views/comments/_form.html.erb:15: syntax error, unexpected `end'
+...eze;@output_buffer.append=( end );
+...                            ^~~
+/Users/joe/Coding/Microverse/Ruby on Rails/Blog App/Blog-App/app/views/comments/_form.html.erb:18: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/Users/joe/Coding/Microverse/Ruby on Rails/Blog App/Blog-App/app/views/comments/_form.html.erb:20: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/comments/_form.html.erb:15: syntax error, unexpected `end'
+app/views/comments/_form.html.erb:18: syntax error, unexpected `ensure', expecting ')'
+app/views/comments/_form.html.erb:20: syntax error, unexpected `end', expecting ')'
+app/views/articles/show.html.erb:3:in `_app_views_articles_show_html_erb___2804959619327641537_26440'
+Started GET "/articles/2" for ::1 at 2020-08-28 16:38:43 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (129.3ms)
+  Rendered articles/show.html.erb within layouts/application (131.9ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `article_comments_path' for #<#<Class:0x00007ff249068b08>:0x00007ff247c30708>
+Did you mean?  article_path):
+    1: <h3>Post a Comment</h3>
+    2: 
+    3: <%= form_for [@article, @comment] do |f| %>
+    4:   <p>
+    5:     <%= f.label :author_name %><br/>
+    6:     <%= f.text_field :author_name %>
+  
+app/views/comments/_form.html.erb:3:in `_app_views_comments__form_html_erb__3893427792409767405_27000'
+app/views/articles/show.html.erb:3:in `_app_views_articles_show_html_erb___2804959619327641537_26980'
+Started GET "/articles/2" for ::1 at 2020-08-28 16:38:51 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (124.4ms)
+  Rendered articles/show.html.erb within layouts/application (128.6ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `article_comments_path' for #<#<Class:0x00007ff249068b08>:0x00007ff2484435f8>
+Did you mean?  article_path):
+    1: <h3>Post a Comment</h3>
+    2: 
+    3: <% form_for [@article, @comment] do |f| %>
+    4:   <p>
+    5:     <%= f.label :author_name %><br/>
+    6:     <%= f.text_field :author_name %>
+  
+app/views/comments/_form.html.erb:3:in `_app_views_comments__form_html_erb__3893427792409767405_27660'
+app/views/articles/show.html.erb:3:in `_app_views_articles_show_html_erb___2804959619327641537_27640'
+Started GET "/articles/2" for ::1 at 2020-08-28 16:39:21 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (94.7ms)
+  Rendered articles/show.html.erb within layouts/application (96.0ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `article_comments_path' for #<#<Class:0x00007ff249068b08>:0x00007ff243f262b8>
+Did you mean?  article_path):
+    1: <h3>Post a Comment</h3>
+    2: 
+    3: <%= form_for [@article, @comment] do |f| %>
+    4:   <p>
+    5:     <%= f.label :author_name %><br/>
+    6:     <%= f.text_field :author_name %>
+  
+app/views/comments/_form.html.erb:3:in `_app_views_comments__form_html_erb__3893427792409767405_28200'
+app/views/articles/show.html.erb:3:in `_app_views_articles_show_html_erb___2804959619327641537_28180'
+Started GET "/articles/2" for ::1 at 2020-08-28 16:40:37 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (2.0ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:8
+  Rendered collection of articles/_comment.html.erb [1 times] (0.4ms)
+  Rendered articles/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 46ms (Views: 24.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/articles" for ::1 at 2020-08-28 16:40:54 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-08-28 16:41:27 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.9ms)
+  Rendered articles/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2020-08-28 16:41:34 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"saeBHULngIqXie+AccgpByHrgzSHZeXzdrlaO3MA7FEfC70fczvYHiHYV3mjo2OkFMmiH/gKk4ZhoQoJqMPydg==", "article"=>{"title"=>"Ipsum Lorem", "body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus lorem massa, ac lacinia massa placerat id. Donec bibendum nunc urna, ultrices cursus magna iaculis ac. Vivamus euismod purus vel nisi semper dictum. Morbi fermentum, nisl eget ornare tristique, erat eros sodales nisi, vitae porttitor nunc diam blandit dolor. In at purus viverra, rutrum orci ac, fringilla odio. Aliquam molestie feugiat quam, id rutrum urna pretium sit amet. Morbi rutrum venenatis tristique. Mauris viverra elementum velit non vulputate. Vestibulum nunc nunc, egestas eget neque vitae, ultricies malesuada nibh. Nulla gravida lacinia ultricies. Maecenas quis ante condimentum, rutrum urna in, mattis sem. Vivamus enim tortor, condimentum vitae volutpat sed, pulvinar a felis.\r\n\r\nMaecenas et consequat orci. Quisque vitae orci condimentum, elementum quam ac, lobortis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec in gravida mi. Nam vestibulum quam vehicula metus varius fringilla. Aliquam purus neque, blandit non vulputate eget, auctor vulputate mi. Nullam cursus leo vitae orci dignissim bibendum.\r\n\r\nProin risus dolor, aliquam quis nunc eu, aliquam laoreet elit. Etiam lacinia urna libero, eget consequat lorem bibendum nec. Mauris ultrices euismod justo vel scelerisque. Aliquam quis metus augue. Vestibulum tempus porta nisi, eget porta neque aliquet vel. Aliquam tristique elementum enim lobortis pharetra. Fusce interdum, odio et sodales aliquam, mauris enim tincidunt felis, eget aliquam arcu ex eget nunc. Sed eu orci turpis. Phasellus fermentum nisi est, dignissim pharetra justo iaculis nec. Fusce congue lorem at sagittis posuere. Fusce iaculis lobortis felis, sit amet accumsan est posuere eget.\r\n\r\nSuspendisse turpis massa, pharetra eget felis id, hendrerit feugiat erat. Cras nec nunc facilisis, fringilla est sit amet, porttitor orci. Integer quis posuere neque, accumsan semper eros. Nulla mi felis, ornare eget efficitur sed, vulputate eget libero. Suspendisse lorem ipsum, egestas sed posuere non, pellentesque vitae eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam diam justo, sagittis a fringilla at, efficitur eget mauris. Vestibulum facilisis elit id nibh rutrum fringilla. Fusce tempus erat quis felis efficitur fringilla. Maecenas sed aliquam dui. Suspendisse odio velit, porttitor ut mi eu, commodo pellentesque neque. Maecenas commodo lorem lobortis molestie consequat. Aenean libero dolor, viverra a tortor eu, euismod congue nibh. Cras suscipit, risus et ultricies tempor, mauris massa gravida velit, porta hendrerit elit turpis cursus justo. Ut sed ligula non lacus dapibus maximus.\r\n\r\nAenean accumsan justo et justo vehicula vehicula. Aliquam et aliquam ipsum. Suspendisse vel justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla libero est, pellentesque eget diam vitae, molestie vulputate felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi vulputate erat mauris, id viverra eros efficitur in. Cras ac fringilla ligula, ut vulputate arcu. Etiam metus est, egestas at convallis bibendum, luctus ac nisi. Suspendisse id mi at nunc vehicula luctus in vitae felis. Morbi finibus tincidunt purus sit amet suscipit. Suspendisse at porttitor neque, at congue dui. Maecenas dictum nunc felis, et mattis eros consectetur molestie. Suspendisse potenti. Donec metus ligula, commodo at pharetra vel, vehicula sed mi. Interdum et malesuada fames ac ante ipsum primis in faucibus.\r\n\r\nVestibulum imperdiet arcu quam. Donec non erat ac nisi semper congue ut eu leo. Donec ultrices viverra justo, nec congue magna ultricies vitae. Donec dignissim tortor eleifend bibendum mollis. Vivamus fringilla nulla eu nunc venenatis blandit. Donec eget ipsum arcu. In hac habitasse platea dictumst. Cras laoreet, lorem id consequat bibendum, augue turpis fermentum nunc, a ullamcorper est justo quis urna. Suspendisse non lectus consequat, ultricies ipsum et, sollicitudin ante. Nulla eget maximus leo. Donec egestas, libero scelerisque tempus finibus, orci neque suscipit eros, accumsan tempus augue tellus at nulla. Nunc eros leo, porttitor at sodales vel, accumsan at turpis. Aenean pulvinar rutrum libero, ac dignissim ante suscipit in. Vivamus id mauris pellentesque est pretium placerat eget eu augue.\r\n\r\nIn hac habitasse platea dictumst. Suspendisse nec mollis risus. Praesent pulvinar accumsan nisl, nec pretium tellus tempus sed. Nam in nisl ipsum. Donec suscipit pulvinar lacus, vitae cursus metus varius sit amet. Donec aliquam quis augue eu luctus. Integer cursus ligula augue, vitae condimentum eros sollicitudin ut. Vivamus consequat purus nec nibh hendrerit sollicitudin. Suspendisse semper blandit dictum. Cras ut ex lacus.\r\n\r\nDuis interdum ipsum tincidunt nisi faucibus tempus. Sed dui odio, pellentesque eu lacus vel, accumsan aliquam massa. Donec luctus, velit at tincidunt viverra, metus turpis tincidunt mauris, consequat dignissim nibh tortor non magna. Fusce iaculis erat sit amet varius volutpat. Maecenas vel purus neque. Donec dignissim sagittis tellus at tristique. Vestibulum eget massa lobortis, bibendum tellus sit amet, lacinia nisl. Sed at nulla blandit, euismod augue eget, malesuada odio. Donec lobortis, felis mattis gravida porttitor, metus sapien pulvinar neque, sed dictum arcu enim at lorem. Fusce sed justo faucibus, fringilla sem nec, mattis enim. Donec dictum consectetur aliquet. Nam molestie orci felis, faucibus congue lorem vehicula at. Duis venenatis neque mi, vitae ullamcorper est commodo at. Curabitur nunc lacus, porttitor in odio in, ornare feugiat lacus. Proin molestie dui magna, a convallis arcu semper id.\r\n\r\nIn fringilla blandit commodo. Sed libero nunc, efficitur pharetra tortor vel, cursus ultrices purus. Nunc nec ultricies turpis, semper bibendum risus. Quisque sagittis felis vitae erat imperdiet, in tempor lacus venenatis. Etiam nec dui feugiat, vulputate dolor a, malesuada ligula. Sed tempor tincidunt pharetra. Sed viverra, nibh non laoreet finibus, eros eros tincidunt sapien, vitae lobortis velit elit quis enim. In accumsan id tellus et fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse neque sem, venenatis sed augue ut, rhoncus pulvinar magna. Vivamus gravida diam porttitor erat ultrices, sit amet placerat neque pharetra. Donec eu scelerisque quam.\r\n\r\nUt mattis lorem massa, quis congue purus accumsan vel. Donec mattis tortor quis tellus consectetur lobortis. Sed sit amet faucibus nisl. Praesent et nibh purus. Praesent vehicula euismod cursus. Nullam consectetur lacinia neque. Curabitur massa ex, semper in felis sed, lobortis pretium velit."}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:19
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ipsum Lorem"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus lorem massa, ac lacinia massa placerat id. Donec bibendum nunc urna, ultrices cursus magna iaculis ac. Vivamus euismod purus vel nisi semper dictum. Morbi fermentum, nisl eget ornare tristique, erat eros sodales nisi, vitae porttitor nunc diam blandit dolor. In at purus viverra, rutrum orci ac, fringilla odio. Aliquam molestie feugiat quam, id rutrum urna pretium sit amet. Morbi rutrum venenatis tristique. Mauris viverra elementum velit non vulputate. Vestibulum nunc nunc, egestas eget neque vitae, ultricies malesuada nibh. Nulla gravida lacinia ultricies. Maecenas quis ante condimentum, rutrum urna in, mattis sem. Vivamus enim tortor, condimentum vitae volutpat sed, pulvinar a felis.\r\n\r\nMaecenas et consequat orci. Quisque vitae orci condimentum, elementum quam ac, lobortis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec in gravida mi. Nam vestibulum quam vehicula metus varius fringilla. Aliquam purus neque, blandit non vulputate eget, auctor vulputate mi. Nullam cursus leo vitae orci dignissim bibendum.\r\n\r\nProin risus dolor, aliquam quis nunc eu, aliquam laoreet elit. Etiam lacinia urna libero, eget consequat lorem bibendum nec. Mauris ultrices euismod justo vel scelerisque. Aliquam quis metus augue. Vestibulum tempus porta nisi, eget porta neque aliquet vel. Aliquam tristique elementum enim lobortis pharetra. Fusce interdum, odio et sodales aliquam, mauris enim tincidunt felis, eget aliquam arcu ex eget nunc. Sed eu orci turpis. Phasellus fermentum nisi est, dignissim pharetra justo iaculis nec. Fusce congue lorem at sagittis posuere. Fusce iaculis lobortis felis, sit amet accumsan est posuere eget.\r\n\r\nSuspendisse turpis massa, pharetra eget felis id, hendrerit feugiat erat. Cras nec nunc facilisis, fringilla est sit amet, porttitor orci. Integer quis posuere neque, accumsan semper eros. Nulla mi felis, ornare eget efficitur sed, vulputate eget libero. Suspendisse lorem ipsum, egestas sed posuere non, pellentesque vitae eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam diam justo, sagittis a fringilla at, efficitur eget mauris. Vestibulum facilisis elit id nibh rutrum fringilla. Fusce tempus erat quis felis efficitur fringilla. Maecenas sed aliquam dui. Suspendisse odio velit, porttitor ut mi eu, commodo pellentesque neque. Maecenas commodo lorem lobortis molestie consequat. Aenean libero dolor, viverra a tortor eu, euismod congue nibh. Cras suscipit, risus et ultricies tempor, mauris massa gravida velit, porta hendrerit elit turpis cursus justo. Ut sed ligula non lacus dapibus maximus.\r\n\r\nAenean accumsan justo et justo vehicula vehicula. Aliquam et aliquam ipsum. Suspendisse vel justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla libero est, pellentesque eget diam vitae, molestie vulputate felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi vulputate erat mauris, id viverra eros efficitur in. Cras ac fringilla ligula, ut vulputate arcu. Etiam metus est, egestas at convallis bibendum, luctus ac nisi. Suspendisse id mi at nunc vehicula luctus in vitae felis. Morbi finibus tincidunt purus sit amet suscipit. Suspendisse at porttitor neque, at congue dui. Maecenas dictum nunc felis, et mattis eros consectetur molestie. Suspendisse potenti. Donec metus ligula, commodo at pharetra vel, vehicula sed mi. Interdum et malesuada fames ac ante ipsum primis in faucibus.\r\n\r\nVestibulum imperdiet arcu quam. Donec non erat ac nisi semper congue ut eu leo. Donec ultrices viverra justo, nec congue magna ultricies vitae. Donec dignissim tortor eleifend bibendum mollis. Vivamus fringilla nulla eu nunc venenatis blandit. Donec eget ipsum arcu. In hac habitasse platea dictumst. Cras laoreet, lorem id consequat bibendum, augue turpis fermentum nunc, a ullamcorper est justo quis urna. Suspendisse non lectus consequat, ultricies ipsum et, sollicitudin ante. Nulla eget maximus leo. Donec egestas, libero scelerisque tempus finibus, orci neque suscipit eros, accumsan tempus augue tellus at nulla. Nunc eros leo, porttitor at sodales vel, accumsan at turpis. Aenean pulvinar rutrum libero, ac dignissim ante suscipit in. Vivamus id mauris pellentesque est pretium placerat eget eu augue.\r\n\r\nIn hac habitasse platea dictumst. Suspendisse nec mollis risus. Praesent pulvinar accumsan nisl, nec pretium tellus tempus sed. Nam in nisl ipsum. Donec suscipit pulvinar lacus, vitae cursus metus varius sit amet. Donec aliquam quis augue eu luctus. Integer cursus ligula augue, vitae condimentum eros sollicitudin ut. Vivamus consequat purus nec nibh hendrerit sollicitudin. Suspendisse semper blandit dictum. Cras ut ex lacus.\r\n\r\nDuis interdum ipsum tincidunt nisi faucibus tempus. Sed dui odio, pellentesque eu lacus vel, accumsan aliquam massa. Donec luctus, velit at tincidunt viverra, metus turpis tincidunt mauris, consequat dignissim nibh tortor non magna. Fusce iaculis erat sit amet varius volutpat. Maecenas vel purus neque. Donec dignissim sagittis tellus at tristique. Vestibulum eget massa lobortis, bibendum tellus sit amet, lacinia nisl. Sed at nulla blandit, euismod augue eget, malesuada odio. Donec lobortis, felis mattis gravida porttitor, metus sapien pulvinar neque, sed dictum arcu enim at lorem. Fusce sed justo faucibus, fringilla sem nec, mattis enim. Donec dictum consectetur aliquet. Nam molestie orci felis, faucibus congue lorem vehicula at. Duis venenatis neque mi, vitae ullamcorper est commodo at. Curabitur nunc lacus, porttitor in odio in, ornare feugiat lacus. Proin molestie dui magna, a convallis arcu semper id.\r\n\r\nIn fringilla blandit commodo. Sed libero nunc, efficitur pharetra tortor vel, cursus ultrices purus. Nunc nec ultricies turpis, semper bibendum risus. Quisque sagittis felis vitae erat imperdiet, in tempor lacus venenatis. Etiam nec dui feugiat, vulputate dolor a, malesuada ligula. Sed tempor tincidunt pharetra. Sed viverra, nibh non laoreet finibus, eros eros tincidunt sapien, vitae lobortis velit elit quis enim. In accumsan id tellus et fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse neque sem, venenatis sed augue ut, rhoncus pulvinar magna. Vivamus gravida diam porttitor erat ultrices, sit amet placerat neque pharetra. Donec eu scelerisque quam.\r\n\r\nUt mattis lorem massa, quis congue purus accumsan vel. Donec mattis tortor quis tellus consectetur lobortis. Sed sit amet faucibus nisl. Praesent et nibh purus. Praesent vehicula euismod cursus. Nullam consectetur lacinia neque. Curabitur massa ex, semper in felis sed, lobortis pretium velit."], ["created_at", "2020-08-28 15:41:34.370370"], ["updated_at", "2020-08-28 15:41:34.370370"]]
+  ↳ app/controllers/articles_controller.rb:19
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:19
+Redirected to http://localhost:3000/articles/6
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/articles/6" for ::1 at 2020-08-28 16:41:34 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8
+  Rendering articles/show.html.erb within layouts/application
+  Rendered comments/_form.html.erb (5.4ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 6]]
+  ↳ app/views/articles/show.html.erb:8
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered articles/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/articles/6/comments" for ::1 at 2020-08-28 16:42:06 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
