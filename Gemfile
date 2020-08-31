@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 
+# sorcery
+gem 'sorcery'
+
 # paperclip 
 gem "paperclip"
 
